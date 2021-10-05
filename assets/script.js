@@ -6,7 +6,7 @@ let API = "8bacb2a3683409af8aa1b6efbb113ea6";
 search.addEventListener("click", function (event) {
   event.preventDefault();
   let searchCity = document.getElementById("search").value;
-  console.log(searchCity)
+  console.log(searchCity);
   localStorage.setItem("history", searchCity);
   let city = localStorage.getItem("history");
   let button = document.createElement("button");
@@ -21,8 +21,8 @@ search.addEventListener("click", function (event) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data)
-      displayCityInfo(data)
+      console.log(data);
+      displayCityInfo(data);
       let lat = Object.values(data.coord)[1];
       let lon = Object.values(data.coord)[0];
 
@@ -33,17 +33,13 @@ search.addEventListener("click", function (event) {
           return reply.json();
         })
         .then(function (info) {
-          console.log(info)
-          document.querySelector("#UvIndex").innerHTML = "UV Index " + info.current.uvi;
-          sevenDayIcon(info)
-          sevenDayTemp(info)
-          sevenDayWind(info)
-          SevenDayHum(info)
-          // this.showCurrentInfo(info);
-          // this.futureIcon(info);
-          // this.futureTemp(info);
-          // this.futureWind(info);
-          // this.futureHumidity(info);
+          console.log(info);
+          document.querySelector("#UvIndex").innerHTML =
+            "UV Index " + info.current.uvi;
+          sevenDayIcon(info);
+          sevenDayTemp(info);
+          sevenDayWind(info);
+          SevenDayHum(info);
         });
     });
 });
@@ -52,8 +48,10 @@ function displayCityInfo(info) {
   document.querySelector("#citysearched").innerHTML =
     info.name + "/" + moment().format("MMMM do, YYYY") + "-";
   document.querySelector("#temp").innerHTML = "Temp: " + info.main.temp + "℃";
-  document.querySelector("#humidity").innerHTML = "Humidity: " + info.main.humidity + "%";
-  document.querySelector("#windSpeed").innerHTML = "Wind speed: " + info.wind.speed + " meter/sec";
+  document.querySelector("#humidity").innerHTML =
+    "Humidity: " + info.main.humidity + "%";
+  document.querySelector("#windSpeed").innerHTML =
+    "Wind speed: " + info.wind.speed + " meter/sec";
 }
 
 function sevenDay() {
@@ -94,25 +92,40 @@ function sevenDayIcon(info) {
 }
 
 function sevenDayTemp(info) {
-  document.querySelector("#temp1").innerHTML = "Temp: " + info.daily[0].temp.day  + "℃";
-  document.querySelector("#temp2").innerHTML = "Temp: " + info.daily[1].temp.day  + "℃";
-  document.querySelector("#temp3").innerHTML = "Temp: " + info.daily[2].temp.day  + "℃";
-  document.querySelector("#temp4").innerHTML = "Temp: " + info.daily[3].temp.day  + "℃";
-  document.querySelector("#temp5").innerHTML = "Temp: " + info.daily[4].temp.day  + "℃";
+  document.querySelector("#temp1").innerHTML =
+    "Temp: " + info.daily[0].temp.day + "℃";
+  document.querySelector("#temp2").innerHTML =
+    "Temp: " + info.daily[1].temp.day + "℃";
+  document.querySelector("#temp3").innerHTML =
+    "Temp: " + info.daily[2].temp.day + "℃";
+  document.querySelector("#temp4").innerHTML =
+    "Temp: " + info.daily[3].temp.day + "℃";
+  document.querySelector("#temp5").innerHTML =
+    "Temp: " + info.daily[4].temp.day + "℃";
 }
 
 function sevenDayWind(info) {
-  document.querySelector("#wind1").innerHTML = "Wind: " + info.daily[0].wind_speed + " m/sec";
-  document.querySelector("#wind2").innerHTML = "Wind: " + info.daily[1].wind_speed + " m/sec";
-  document.querySelector("#wind3").innerHTML = "Wind: " + info.daily[2].wind_speed + " m/sec";
-  document.querySelector("#wind4").innerHTML = "Wind: " + info.daily[3].wind_speed + " m/sec";
-  document.querySelector("#wind5").innerHTML = "Wind: " + info.daily[4].wind_speed + " m/sec";
+  document.querySelector("#wind1").innerHTML =
+    "Wind: " + info.daily[0].wind_speed + " m/sec";
+  document.querySelector("#wind2").innerHTML =
+    "Wind: " + info.daily[1].wind_speed + " m/sec";
+  document.querySelector("#wind3").innerHTML =
+    "Wind: " + info.daily[2].wind_speed + " m/sec";
+  document.querySelector("#wind4").innerHTML =
+    "Wind: " + info.daily[3].wind_speed + " m/sec";
+  document.querySelector("#wind5").innerHTML =
+    "Wind: " + info.daily[4].wind_speed + " m/sec";
 }
 
 function SevenDayHum(info) {
-  document.querySelector("#hum1").innerHTML = "Humidity: " + info.daily[0].humidity + "%";
-  document.querySelector("#hum2").innerHTML = "Humidity: " + info.daily[1].humidity + "%";
-  document.querySelector("#hum3").innerHTML = "Humidity: " + info.daily[2].humidity + "%";
-  document.querySelector("#hum4").innerHTML = "Humidity: " + info.daily[3].humidity + "%";
-  document.querySelector("#hum5").innerHTML = "Humidity: " + info.daily[4].humidity + "%";
+  document.querySelector("#hum1").innerHTML =
+    "Humidity: " + info.daily[0].humidity + "%";
+  document.querySelector("#hum2").innerHTML =
+    "Humidity: " + info.daily[1].humidity + "%";
+  document.querySelector("#hum3").innerHTML =
+    "Humidity: " + info.daily[2].humidity + "%";
+  document.querySelector("#hum4").innerHTML =
+    "Humidity: " + info.daily[3].humidity + "%";
+  document.querySelector("#hum5").innerHTML =
+    "Humidity: " + info.daily[4].humidity + "%";
 }
