@@ -25,3 +25,5 @@
 ➕ THEN I am again presented with current and future conditions for that city
 
 ### Link to deployed site https://michaeldigi.github.io/Weather-Dashboard/
+
+![Screenshot](./assets/weather.PNG)
