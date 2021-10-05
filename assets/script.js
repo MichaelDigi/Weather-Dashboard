@@ -46,7 +46,7 @@ search.addEventListener("click", function (event) {
 
 function displayCityInfo(info) {
   document.querySelector("#citysearched").innerHTML =
-    info.name + "/" + moment().format("MMMM do, YYYY") + "-";
+    info.name + "/" + moment().format("MMMM do, YYYY");
   document.querySelector("#temp").innerHTML = "Temp: " + info.main.temp + "℃";
   document.querySelector("#humidity").innerHTML =
     "Humidity: " + info.main.humidity + "%";
