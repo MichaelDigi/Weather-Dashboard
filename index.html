@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link src="./assets/style.css" rel="stylesheet"></link>
 </head>
-<body>
+<body class="bg-dark">
     <nav class="navbar navbar-dark bg-primary">
         <div class="container-fluid">
           <a class="navbar-brand">Weather App</a>
@@ -19,16 +19,25 @@
           </form>
         </div>
       </nav>
+
+      <div class="p-4 p-md-5 mb-4 text-white bg-dark">
+        <div class="col-md-6 px-0">
+          <h1 class="display-4 fst-italic">A Decent Weather App</h1>
+          <p class="lead my-3">Developed using OpenWeatherMap Api</p>
+          <footer class="blockquote-footer">Developer <cite title="Source Title">Michael Digiandomenico</cite></footer>
+</blockquote>
+        </div>
+      </div>
       
       <form id="history"></form>
 
-      <div class="card">
-        <h5 id="citysearched"></h5>
+      <div class="card bg-dark">
+        <h5 class="bg-dark" id="citysearched"></h5>
 
-      <div class="col-8">
+      <div class="col-20">
         <section id="RtWeather">
-            <div class="row">
-                <div class="col-12 border border-primary squared">
+            <div class="row bg-dark">
+                <div class="col-12 border border-secondary ">
                     <h3 id="city-report"></h3>
                     <div class="row">
                     <div class="col-12">
@@ -39,30 +48,30 @@
 
                     <div class="row">
                     <div class="col-12">
-                    <p id="temp">Temp: </p>
+                    <p class="text-white" id="temp">Temp: </p>
                     </div>
                     </div>
 
                     <div class="row">
                     <div class="col-12">
-                    <p id="humidity">Wind speed: </p>
+                    <p class="text-white" id="humidity">Wind speed: </p>
                     </div>
                     </div>
 
                     <div class="row">
                     <div class="col-12">
-                    <p id="windSpeed">Humidity:</p>
+                    <p class="text-white" id="windSpeed">Humidity:</p>
                     </div>
                     </div>
 
                     <div class="row">
                     <div class="col-12">
-                    <p id="UvIndex">UV Index:</p>
+                    <p class="text-white"id="UvIndex">UV Index:</p>
                     </div>
                     </div>
                 </div>
             </div>
-            <h4 class="card-header">5 day forcast </h4>
+            <h4 class="card-header text-white">5 day forcast </h4>
         <div class="d-flex">
           <div class="card text-black bg-primary m-1 p-1" style="max-width: 20%;">
               <h5 id="date1"></h5>
